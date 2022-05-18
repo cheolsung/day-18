@@ -6,13 +6,14 @@ my_screen.colormode(255)
 ching = Turtle()
 ching.hideturtle()
 ching.speed(0)
-print(ching.pensize(10))
+print(ching.pensize(1))
 
-for _ in range(500):
+number_of_circles = 100
+for i in range(number_of_circles):
     ching.color(randint(0,255),randint(0,255),randint(0,255))
-    angle = randint(0,3)*90
-    ching.forward(20)
-    ching.right(angle)
+    angle = 365/number_of_circles
+    ching.circle(100)
+    ching.seth(angle*(i+1))
 
 my_screen.screensize(800,800)
 my_screen.exitonclick()
