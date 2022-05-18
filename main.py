@@ -1,17 +1,18 @@
 from turtle import Turtle, Screen
-import random
-
-ching = Turtle()
-ching.shape("turtle")
-colors=["red","blue","magenta","yellow","aquamarine","bisque"]
-
-for sides in range(3,11):
-    ching.color(random.choice(colors))
-    angle = 360/sides
-    for _ in range(sides):
-        ching.forward(100)
-        ching.right(angle)
+from random import randint
 
 my_screen = Screen()
+my_screen.colormode(255)
+ching = Turtle()
+ching.hideturtle()
+ching.speed(0)
+print(ching.pensize(10))
+
+for _ in range(500):
+    ching.color(randint(0,255),randint(0,255),randint(0,255))
+    angle = randint(0,3)*90
+    ching.forward(20)
+    ching.right(angle)
+
 my_screen.screensize(800,800)
 my_screen.exitonclick()
