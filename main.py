@@ -8,17 +8,19 @@ my_screen.colormode(255)
 ching = Turtle()
 ching.hideturtle()
 ching.speed(0)
-print(ching.pensize(1))
+ching.pensize(4)
 
-number_of_circles = 50
+number_of_circles = 100
+size_of_circles=50
 radius = 100
+ching.penup()
+ching.sety(-radius)
 for i in range(number_of_circles):
     ching.color(randint(0,255),randint(0,255),randint(0,255))
-    angle = 2*math.pi/number_of_circles
     ching.penup()
-    ching.goto(radius*math.cos(angle*i),radius*math.sin(angle*i))
+    ching.goto(radius*math.sin(2*math.pi*i/number_of_circles),radius*math.cos(2*math.pi*i/number_of_circles))
+    ching.seth(360-360/number_of_circles*i)
     ching.pendown()
-    ching.circle(150)
+    ching.circle(size_of_circles)
 
-my_screen.screensize(800,800)
 my_screen.exitonclick()
